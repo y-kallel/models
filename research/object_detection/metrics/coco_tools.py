@@ -134,7 +134,7 @@ class COCOWrapper(coco.COCO):
         ann['bbox'] = mask.toBbox(ann['segmentation'])
         ann['id'] = idx + 1
         ann['iscrowd'] = 0
-    tf.logging.info('DONE (t=%0.2fs)', (time.time() - tic))
+    tf.logging.info('DONE (t=%0.2fs)', int(time.time() - tic))
 
     results.dataset['annotations'] = annotations
     results.createIndex()
