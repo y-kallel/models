@@ -80,6 +80,13 @@ if tf_version.is_tf1():
   from object_detection.models.ssd_mobiledet_feature_extractor import SSDMobileDetEdgeTPUFeatureExtractor
   from object_detection.models.ssd_pnasnet_feature_extractor import SSDPNASNetFeatureExtractor
   from object_detection.predictors import rfcn_box_predictor
+  from object_detection.models.retinanet_feature_extractor import RetinaNet50FeatureExtractor, RetinaNet101FeatureExtractor
+
+SSD_FEATURE_EXTRACTOR_CLASS_MAP = {
+    ...
+    'retinanet_50': RetinaNet50FeatureExtractor,
+    'retinanet_101': RetinaNet101FeatureExtractor,
+}
 # pylint: enable=g-import-not-at-top
 
 if tf_version.is_tf2():
@@ -155,6 +162,10 @@ if tf_version.is_tf1():
           ssd_resnet_v1_ppn.SSDResnet101V1PpnFeatureExtractor,
       'ssd_resnet152_v1_ppn':
           ssd_resnet_v1_ppn.SSDResnet152V1PpnFeatureExtractor,
+      'retinanet_50': 
+          RetinaNet50FeatureExtractor,
+      'retinanet_101': 
+          RetinaNet101FeatureExtractor,
       'embedded_ssd_mobilenet_v1':
           EmbeddedSSDMobileNetV1FeatureExtractor,
       'ssd_pnasnet':
