@@ -82,11 +82,6 @@ if tf_version.is_tf1():
   from object_detection.predictors import rfcn_box_predictor
   from object_detection.models.retinanet_feature_extractor import RetinaNet50FeatureExtractor, RetinaNet101FeatureExtractor
 
-SSD_FEATURE_EXTRACTOR_CLASS_MAP = {
-    ...
-    'retinanet_50': RetinaNet50FeatureExtractor,
-    'retinanet_101': RetinaNet101FeatureExtractor,
-}
 # pylint: enable=g-import-not-at-top
 
 if tf_version.is_tf2():
